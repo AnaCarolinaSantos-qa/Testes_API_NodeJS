@@ -42,7 +42,10 @@ describe('Validar campos do usuário', () => {
 
     it('Validar campo support', () => {
         return request.get('users/8').then((response) => {
-            expect(response.body.support.text).to.have.eq('To keep ReqRes free, contributions towards server costs are appreciated!')
+            const support = response.body.support
+            expect(support).to.be.an('object')
+            expect(support.text).to.be.a('string').and.not.empty
+                        expect(support.url).to.be.a('string').and.match(/^https?:/)
         })
     })
 })

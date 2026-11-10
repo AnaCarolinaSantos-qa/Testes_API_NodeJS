@@ -45,7 +45,7 @@ describe('Validar campos do usuário', () => {
             const support = response.body.support
             expect(support).to.be.an('object')
             expect(support.text).to.be.a('string').and.not.empty
-            expect(support.url).to.be.a('string').and.match(/^https?:\\/\\//)
+            expect(support.url).to.be.a('string').and.match(/^https?:\/\//)
         })
     })
 })
